@@ -1,9 +1,10 @@
-import requests
-import os
 import argparse
-from urllib.parse import urlparse
-from dotenv import load_dotenv
+import os
 from pathlib import Path
+from urllib.parse import urlparse
+
+import requests
+from dotenv import load_dotenv
 
 
 def is_bitlink(url,token):
