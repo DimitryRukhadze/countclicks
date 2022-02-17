@@ -70,15 +70,15 @@ if __name__ == '__main__':
   auth_token = os.environ['BITLY_TOKEN_AUTH']
   cmd_parser = argparse.ArgumentParser()
   cmd_parser.add_argument('link')
-  user_url = cmd_parser.parse_args()
+  url_args = cmd_parser.parse_args()
   
-  if is_bitlink(user_url.link, auth_token):
-    parsed_bitlink = urlparse(user_url.link)
+  if is_bitlink(url_args.link, auth_token):
+    parsed_bitlink = urlparse(url_args.link)
     bitlink_address = f'{parsed_bitlink.netloc}{parsed_bitlink.path}'
     print('Всего кликов: ', count_clicks(auth_token, bitlink_address))
   else:
     try:
-      new_bitlink = shorten_link(auth_token, user_url.link)
+      new_bitlink = shorten_link(auth_token, url_args.link)
       print('Битлинк', new_bitlink)
     except requests.exceptions.HTTPError:
       print("Данная ссылка не существует")
