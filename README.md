@@ -18,7 +18,7 @@ Python версии не ниже 3.9 должен быть установлен
 Быстрый старт
 ---
 Перед началом работы, вам необходимо получить токен для использования API Bit.ly. Это можно сделать на их сайте: [bit.ly](https://bit.ly/).
-Полученный токен следует записать в файле .env в переменную BITLY_TOKEN_AUTH:
+Полученный токен следует записать в файле `.env` в переменную `BITLY_TOKEN_AUTH:`
 
 `BITLY_TOKEN_AUTH = 1234токен`
 
@@ -30,12 +30,14 @@ Python версии не ниже 3.9 должен быть установлен
 Обратите внимание: адрес сайта обязательно начинается с http или https и передаётся в качестве аргумента при запуске программы.
     Если вы передали в качесте аргумента обычный URL, то результат корректной работы программы будет выглядеть примерно так:
 
-[![countclicks2.jpg](https://i.postimg.cc/W1YTzByc/countclicks2.jpg)](https://postimg.cc/fVd6grZ8)
+<pre><code>\forstudy\countclicks>python main.py http://devman.ru
+Битлинк https://bit.ly/3uRMip6</code></pre>
+
 
 Полученный с помощью API Bit.ly короткий URL будет отображен после слова "Битлинк".
 
 **Для получения количества кликов по короткому URL** достаточно передать его в качестве аргумента при запуске программы.
 Результат будет выглядеть так: 
 
-[![countclicks5.jpg](https://i.postimg.cc/dtCwnyCf/countclicks5.jpg)](https://postimg.cc/XpnRYXQK)
-
+<pre><code>forstudy\countclicks>python main.py https://bit.ly/3uRMip6 
+Всего кликов:  4</code></pre>
